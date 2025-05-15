@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home"
+    android:id="@+id/main"
+    android:background="@color/white">
+
+    <!-- MAIN CONTENT -->
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <View
+            android:id="@+id/click_blocker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:visibility="gone"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="8dp">
+
+            <ImageButton
+                android:id="@+id/menu_button"
+                android:background="@drawable/menu"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="Menu Button" />
+
+            <TextView
+                android:text="@string/app_name"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
+        </LinearLayout>
+
+        <!-- WELCOME MESSAGE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingVertical="30dp">
+
+            <TextView
+                android:text="🗓 SCHEDULES"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Input message here"
+                android:textColor="@color/grey"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- BUTTONS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSchedules"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+
+        <!-- FOOTER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:layout_gravity="bottom">
+
+            <ImageButton
+                android:id="@+id/Home_button"
+                android:background="@drawable/home"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"/>
+
+            <ImageButton
+                android:id="@+id/Schedule_button"
+                android:background="@drawable/schedule"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"/>
+
+            <ImageButton
+                android:id="@+id/Settings_button"
+                android:background="@drawable/setting"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- __________________  MENU :)  __________________ -->
+    <LinearLayout
+        android:id="@+id/Menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:focusable="true">
+
+
+        <LinearLayout
+            android:background="@drawable/menu_layout"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <!--            MENU LAYOUT HERE-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="150dp"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/logo"
+                        android:layout_marginEnd="20dp"
+                        />
+
+                    <TextView
+                        android:text="@string/app_name"
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:text="@string/welcome_guest"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--        INVISIBLE BUTTON FOR EXIT      -->
+        <View
+            android:id="@+id/release_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            />
+    </LinearLayout>
+</FrameLayout>
